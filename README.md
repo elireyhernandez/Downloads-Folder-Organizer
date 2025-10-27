@@ -26,7 +26,7 @@ It also served as a way to strengthen my understanding of Python syntax, file ha
 - Leaves today's downloads untouched to avoid moving active work
 - Categorizes files by type (PDFs → Documents, JPGs → Pictures, etc.)
 - Uses minimal system resources
-- Can run twice a day in the background using Windows Task Scheduler
+- Runs initially at setup and then everytime upon login
 - Keeps a timestamped activity log in `logs/activity.log`
 
 ---

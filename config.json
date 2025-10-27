@@ -1,0 +1,15 @@
+{
+  "use_test_date": false,
+  "test_date": "YYYY-MM-DD",
+  "download_path": "C:/Users/YourName/Downloads",
+  "categories": {
+    "Documents": [".pdf", ".doc", ".docx", ".txt", ".csv", ".xls", ".xlsx"],
+    "Pictures": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp"],
+    "Videos": [".mp4", ".mov", ".avi", ".mkv", ".wmv"],
+    "Audio": [".mp3", ".wav", ".flac", ".aac", ".ogg"],
+    "Archives": [".zip", ".rar", ".7z", ".tar", ".gz"],
+    "Executables": [".exe", ".msi", ".bat", ".cmd", ".jar"],
+    "3D Prints": [".stl", ".obj", ".gcode", ".3mf", ".step", ".iges"],
+    "Coding": [".py", ".cpp", ".c", ".h", ".hpp", ".js", ".html", ".css", ".sql"]
+  }
+}

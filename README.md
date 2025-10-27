@@ -116,7 +116,7 @@ Downloads Folder Organizer/
 
 ---
 ## FAQs
-### 1. Why doesn’t my custom download_path work in config.json?**  
+### 1. Why doesn’t my custom download_path work in config.json?  
 Windows paths copied directly (like C:\Users\YourName\Downloads) use backslashes,  
 but JSON treats backslashes as escape characters — which can cause errors when loading the config file.  
   
@@ -130,7 +130,7 @@ Option 2 (Also valid):
 Avoid using a single backslash (\), or you’ll get an error like:  
 json.decoder.JSONDecodeError: Invalid \escape  
   
-### 2 When I run run_organizer.bat, it says "Python was not found" or "'python' is not recognized."**  
+### 2 When I run run_organizer.bat, it says "Python was not found" or "'python' is not recognized."  
 This happens when Python is not installed correctly or was installed without adding it to your system PATH.  
 The script depends on Python being globally accessible from the command line.  
   
@@ -142,7 +142,7 @@ To fix this:
 You should see a version number like `Python 3.11.6`  
 4. Once Python is working, you can rerun the program or reinstall the scheduled task using `automation/install_task.vbs`  
   
-### 3. I’m getting a “Smart App Control blocked a file” message. What should I do?**  
+### 3. I’m getting a “Smart App Control blocked a file” message. What should I do?  
 Windows Smart App Control or Defender can sometimes block unsigned .vbs or .bat files.  
 This happens because the installer script uses Windows Task Scheduler commands (schtasks) to create an automated background task.  
 This behavior is normal and safe — the script does not access the internet or make any external changes to your system.  
@@ -154,11 +154,11 @@ To fix this:
    
 Administrative privileges are required only once — during installation — because creating or removing scheduled tasks requires elevated permissions.  
   
-### 4. How can I uninstall or stop it from running automatically?**  
+### 4. How can I uninstall or stop it from running automatically?  
 Run automation/uninstall_task.vbs.  
 This removes the scheduled task from Windows Task Scheduler, stopping automatic runs.  
   
-### 5. Will this work on macOS or Linux?**  
+### 5. Will this work on macOS or Linux?  
 Not yet.  
 This version was built for Windows (using Task Scheduler and .bat/.vbs automation).  
 Future versions may include cross-platform support.  

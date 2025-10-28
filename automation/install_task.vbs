@@ -3,7 +3,7 @@
 
 Option Explicit
 
-Dim shell, fs, taskName, batPath, cmd, params
+Dim shell, fs, taskName, batPath, cmd, params, psCmd
 Set shell = CreateObject("WScript.Shell")
 Set fs = CreateObject("Scripting.FileSystemObject")
 
@@ -25,6 +25,14 @@ cmd = "schtasks /create /tn """ & taskName & """ /tr """ & batPath & _
 
 ' Run the command silently
 shell.Run cmd, 0, True
+
+' Disable battery restrictions via PowerShell
+psCmd = "powershell -Command ""$task = Get-ScheduledTask -TaskName '" & taskName & "'; " & _
+        "if ($task) { $s = $task.Settings; " & _
+        "$s.DisallowStartIfOnBatteries = $false; " & _
+        "$s.StopIfGoingOnBatteries = $false; " & _
+        "Set-ScheduledTask -TaskName '" & taskName & "' -Settings $s }"""
+shell.Run psCmd, 0, True
 
 ' Run the organizer immediately once after installation
 shell.Run """" & batPath & """", 0, False
